@@ -1,0 +1,28 @@
+@import url('../../../config-scss/variables.scss');
+:host {
+    form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 1rem 1rem;
+        background-color: #545454;
+        border-radius: 0.5rem;
+
+        input {
+            width: 95%;
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 100;
+            outline: none;
+            color:  var(--branco);
+            
+            &::placeholder {
+                color: var(--branco);
+            }
+        }
+
+        
+    }
+}
