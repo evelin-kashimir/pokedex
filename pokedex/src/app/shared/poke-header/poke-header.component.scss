@@ -1,0 +1,17 @@
+@import url('../../../config-scss/variables.scss');
+//host - Mexer somente no atributo do component específico
+//evita que seja pego informações de outros lugares
+:host {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        padding: 2.5rem 0;
+
+        h2 {
+            margin-left: 1rem;
+            color: var(--branco);
+        }
+    }
+}

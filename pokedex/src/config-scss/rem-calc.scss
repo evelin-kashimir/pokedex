@@ -1,6 +1,0 @@
-//criando função para converter tudo que for pixel para rem
-//tornando o template mais responsivo
-@function rem-calc($size) {
-    $value: $size / 16;
-    @return #{value}rem;
-}
