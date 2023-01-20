@@ -10,10 +10,9 @@ export class PokeListComponent implements OnInit {
 
   constructor(private pokeService: PokeApiService) { }
 
-
   ngOnInit(): void {
     this.pokeService.listAllPokemons.subscribe(
-      res => res   
+      res =>  console.log(res)  
     )
   }
 }
