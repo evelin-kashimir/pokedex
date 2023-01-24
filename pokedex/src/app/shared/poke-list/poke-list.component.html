@@ -1,5 +1,5 @@
 <!-- Buscar pokémons -->
-<poke-search></poke-search>
+<poke-search (emmitSearch)="getPokemon($event)"></poke-search>
 
 <section class="listagem">
     <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
