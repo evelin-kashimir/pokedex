@@ -1,5 +1,5 @@
 <!-- Buscar pokémons -->
-<poke-search (emmitSearch)="getPokemon($event)"></poke-search>
+<poke-search (emmitSearch)="getPokemon($event)" *ngIf="!apiError"></poke-search>
 
 <section class="listagem">
     <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
@@ -17,4 +17,11 @@
             </section>
         </a>
     </ng-template>
+
+</section>
+<section class="apiError" *ngIf="apiError">
+    <span>Ops!</span>
+    <h4>  Pokédex parou de funcionar...</h4>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png" 
+    alt="Erro no detalhamento do pokemon">
 </section>

@@ -2,39 +2,48 @@
 <poke-header></poke-header>
 
 <main *ngIf="pokemon">
-    <section class="pokemon__names">
-     <h2>{{ pokemon[0].name }}</h2>
-     <h3>{{ pokemon[1].names[0].name }}</h3>
+    <ng-template [ngIf]="isLoad">
+        <section class="pokemon__names">
+            <h2>{{ pokemon[0].name }}</h2>
+            <h3>{{ pokemon[1].names[0].name }}</h3>
 
-     <ul>
-        <li *ngFor=" let value of pokemon[0].types">
-            {{ value.type.name}}
-        </li>
-     </ul>
-    </section>
-
-    <section class="pokemon__status">
-        <img 
-        [src]="pokemon[0].sprites.other.dream_world.front_default" 
-        [alt]="pokemon[0].name"
-        >
-    </section>
-
-    <article class="pokemon__status__statistics">
-        <section>
-            <h3>Estatísticas</h3>
-
-            <ol>
-                <li *ngFor="let value of pokemon[0].stats">
-                    {{ value.stat.name }}
-
-                    <strong>{{ value.base_stat }}</strong>
+            <ul>
+                <li *ngFor=" let value of pokemon[0].types">
+                    {{ value.type.name}}
                 </li>
-            </ol>
+            </ul>
         </section>
 
+        <section class="pokemon__status">
+            <img [src]="pokemon[0].sprites.other.dream_world.front_default" [alt]="pokemon[0].name">
+        </section>
+
+        <article class="pokemon__status__statistics">
+            <section>
+                <h3>Estatísticas</h3>
+
+                <ol>
+                    <li *ngFor="let value of pokemon[0].stats">
+                        {{ value.stat.name }}
+
+                        <strong>{{ value.base_stat }}</strong>
+                    </li>
+                </ol>
+            </section>
+
+            <a [routerLink]="['']" class="btn btn__secondary">
+                Voltar
+            </a>
+        </article>
+    </ng-template>
+    <section class="apiError" *ngIf="apiPokeError">
+        <span>Ops!</span>
+        <h4>  Pokédex parou de funcionar...</h4>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png" 
+        alt="Erro no detalhamento do pokemon">
         <a [routerLink]="['']" class="btn btn__secondary">
-            Voltar
+            Tentar novamente
         </a>
-    </article>
+    </section>
+
 </main>

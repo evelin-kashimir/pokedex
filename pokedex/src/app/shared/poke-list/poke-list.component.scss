@@ -73,4 +73,21 @@
             }
         }
     }
+    .apiError {
+        position: relative;
+        display: flex;
+        border-radius: 1.5rem;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 150%;
+        
+        color: var(--secondary-color);
+        align-items: center;
+        span {
+            font-size: 2rem;
+        }
+        img {
+            width: 50%;
+        }
+    }
 }
