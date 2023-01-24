@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 //Modules
 import { PagesModule } from './pages/pages.module';
+import { RouterModule } from '@angular/router';
 
 //Components
 
@@ -18,6 +19,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     PagesModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
