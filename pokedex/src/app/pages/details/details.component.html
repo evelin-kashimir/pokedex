@@ -4,8 +4,8 @@
 <main *ngIf="pokemon">
     <ng-template [ngIf]="isLoad">
         <section class="pokemon__names">
-            <h2>{{ pokemon[0].name }}</h2>
-            <h3>{{ pokemon[1].names[0].name }}</h3>
+            <h2 class="slideInLeft">{{ pokemon[0].name }}</h2>
+            <h3 class="slideInRight">{{ pokemon[1].names[0].name }}</h3>
 
             <ul>
                 <li *ngFor=" let value of pokemon[0].types">
@@ -15,7 +15,7 @@
         </section>
 
         <section class="pokemon__status">
-            <img [src]="pokemon[0].sprites.other.dream_world.front_default" [alt]="pokemon[0].name">
+            <img class="slideInDown" [src]="pokemon[0].sprites.other.dream_world.front_default" [alt]="pokemon[0].name">
         </section>
 
         <article class="pokemon__status__statistics">
